@@ -1,0 +1,75 @@
+name: PR-$(Date:yyyyMMdd)$(Rev:.r)-$(Build.SourceBranchName)
+
+trigger: none
+
+pr:
+  branches:
+    include:
+      - develop
+      - release/*
+      - hotfix/*
+  paths:
+    include:
+      - src
+
+parameters:
+  - name: Templates_Version
+    displayName: Use template repository version
+    type: string
+    default: v1.0.33
+  - name: Vm_Image
+    type: string
+    default: ubuntu-22.04
+  - name: Node_Version
+    displayName: Use Node.js version
+    type: string
+    default: 18
+  - name: Ruby_Version
+    displayName: Use Ruby version
+    type: string
+    default: 3.1
+  - name: Shopify_Cli_Version
+    displayName: Use Shopify CLI version
+    type: string
+    default: 3.57.1
+  - name: Shopify_Theme_Version
+    displayName: Use Shopify Theme version
+    type: string
+    default: 3.57.1
+  - name: SonarQube_ServiceConnection
+    displayName: SonarQube ADO service connection
+    type: string
+    default: SonarQube
+  - name: SonarQube_ProjectKey
+    displayName: SonarQube project key
+    type: string
+    default: 0c3d22cc-4a9b-411c-a0b7
+  - name: SonarQube_ProjectName
+    displayName: SonarQube project name
+    type: string
+    default: Macmillan.Shopify.BeMac.FrontEnd
+
+resources:
+  repositories:
+    - repository: templates
+      name: Cloud Operations/DevOps-Pipelines
+      type: git
+      ref: refs/tags/${{ parameters.Templates_Version }}
+
+variables:
+  - name: ShopifyThemeFilesPath
+    value: $(Build.SourcesDirectory)/src
+
+stages:
+  # Run SonarQube scan and Shopify CLI theme check commands.
+  - template: shopify/stages/build_pr.yml@templates
+    parameters:
+      ShopifyThemeFilesPath: $(ShopifyThemeFilesPath)
+      VmImage: ${{ parameters.Vm_Image }}
+      NodeVersion: ${{ parameters.Node_Version }}
+      RubyVersion: ${{ parameters.Ruby_Version }}
+      ShopifyCliVersion: ${{ parameters.Shopify_Cli_Version }}
+      ShopifyThemeVersion: ${{ parameters.Shopify_Theme_Version }}
+      SonarQubeServiceConnection: ${{ parameters.SonarQube_ServiceConnection }}
+      SonarQubeProjectKey: ${{ parameters.SonarQube_ProjectKey }}
+      SonarQubeProjectName: ${{ parameters.SonarQube_ProjectName }}

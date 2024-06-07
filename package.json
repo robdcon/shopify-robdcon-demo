@@ -1,0 +1,35 @@
+{
+  "name": "macmillan-shopify-bemac-order",
+  "version": "1.0.0",
+  "description": "Shopify CLI theme development",
+  "private": true,
+  "main": "webpack.config.js",
+  "scripts": {
+    "webpack:dev": "set NODE_ENV=development && webpack --watch",
+    "build": "webpack",
+    "shopify:dev": "shopify theme dev",
+    "shopify:start": "cd src && npm run shopify:dev",
+    "start:watch": "concurrently \"npm run webpack:dev\" \"npm run shopify:start\""
+  },
+  "keywords": [],
+  "author": "Rob Connolly",
+  "license": "MIT",
+  "pre-commit": [
+    "build"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "css-loader": "^7.1.1",
+    "mini-css-extract-plugin": "^2.8.1",
+    "node-sass": "^9.0.0",
+    "sass-loader": "^14.2.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-shell-plugin-next": "^2.3.1"
+  },
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "jquery-validation": "^1.20.0"
+  }
+}

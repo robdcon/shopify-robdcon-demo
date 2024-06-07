@@ -1,0 +1,21 @@
+# Node.js
+node_modules/
+
+# Compiled output
+# Application/dist/*
+# !Application/dist/templates/
+
+# Environment variables
+.env
+
+# Dependency directory
+yarn-error.log
+
+# macOS
+.DS_Store
+
+# JetBrains IDEs
+.idea/
+
+# Visual Studio Code
+.vscode/

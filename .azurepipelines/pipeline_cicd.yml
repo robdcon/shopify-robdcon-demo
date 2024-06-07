@@ -1,0 +1,123 @@
+name: $(Date:yyyyMMdd)$(Rev:.r)-$(Build.SourceBranchName)
+
+trigger:
+  batch: true
+  branches:
+    include:
+      - develop
+      - release/*
+      - hotfix/*
+  paths:
+    include:
+      - src
+
+parameters:
+  - name: Templates_Version
+    displayName: Use template repository version
+    type: string
+    default: v1.0.33
+  - name: Vm_Image
+    displayName: Use Microsoft Hosted agent pool
+    type: string
+    default: ubuntu-22.04
+  - name: Run_DEV
+    displayName: Deploy to DEV?
+    type: boolean
+    default: true
+  - name: Run_TST
+    displayName: Deploy to TST?
+    type: boolean
+    default: false
+  - name: Run_UAT
+    displayName: Deploy to UAT?
+    type: boolean
+    default: false
+  - name: Run_PRD
+    displayName: Deploy to PROD?
+    type: boolean
+    default: false
+  - name: Node_Version
+    displayName: Use Node.js version
+    type: string
+    default: 18
+  - name: Ruby_Version
+    displayName: Use Ruby version
+    type: string
+    default: 3.1
+  - name: Shopify_Cli_Version
+    displayName: Use Shopify CLI version
+    type: string
+    default: 3.57.1
+  - name: Shopify_Theme_Version
+    displayName: Use Shopify Theme version
+    type: string
+    default: 3.57.1
+  - name: Run_Theme_List
+    displayName: Run cli theme list command
+    type: boolean
+    default: false
+  - name: Run_Theme_Push
+    displayName: Run cli theme push command
+    type: boolean
+    default: true
+
+resources:
+  repositories:
+    - repository: templates
+      name: Cloud Operations/DevOps-Pipelines
+      type: git
+      ref: refs/tags/${{ parameters.Templates_Version }}
+
+variables:
+  - name: ShopifyThemeFilesPath
+    value: $(Pipeline.Workspace)/drop
+
+stages:
+  - template: shopify/stages/build.yml@templates
+    parameters:
+      VmImage: ${{ parameters.Vm_Image }}
+      ShopifyThemeFilesPath: $(Build.SourcesDirectory)/src
+      ArtifactName: drop
+
+  # Retain the logic for what is deployed in this YAML file.
+  - template: shopify/stages/deploy.yml@templates
+    parameters:
+      VmImage: ${{ parameters.Vm_Image }}
+      NodeVersion: ${{ parameters.Node_Version }}
+      RubyVersion: ${{ parameters.Ruby_Version }}
+      ShopifyCliVersion: ${{ parameters.Shopify_Cli_Version }}
+      ShopifyThemeVersion: ${{ parameters.Shopify_Theme_Version }}
+      RunCommandThemeList: ${{ Parameters.Run_Theme_List }}
+      RunCommandThemePush: ${{ Parameters.Run_Theme_Push }}
+      ShopifyThemeFilesPath: $(ShopifyThemeFilesPath)
+      DeployStages:
+        ${{ if eq(parameters.Run_DEV, true) }}:
+          DeployDEV:
+            DTAP: DEV
+            AdoEnvironment: BEMAC-SHOPIFY-FE-DEV
+            VariableGroupName: KV-BEMAC-SHOPIFY-FE-DEV
+            ShopifyStoreURI: bemac-dev.myshopify.com
+        ${{ if eq(parameters.Run_TST, true) }}:
+          DeployTST:
+            DTAP: TST
+            AdoEnvironment: BEMAC-SHOPIFY-FE-TST
+            VariableGroupName: KV-BEMAC-SHOPIFY-FE-TST
+            ShopifyStoreURI: bemac-tst.myshopify.com
+        # As the ADO environment uses branch control, only deploy to UAT **IF** the branch is in one of the following:
+        # - release/*
+        # - hotfix/*
+        ${{ if eq(and(eq(parameters.Run_UAT, true), or(startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'), startsWith(variables['Build.SourceBranch'], 'refs/heads/hotfix/'))), true) }}:
+          DeployUAT:
+            DTAP: UAT
+            AdoEnvironment: BEMAC-SHOPIFY-FE-UAT
+            VariableGroupName: KV-BEMAC-SHOPIFY-FE-UAT
+            ShopifyStoreURI: bemac-uat2.myshopify.com
+        # As the ADO environment uses branch control, only deploy to PRD **IF** the branch is in one of the following:
+        # - release/*
+        # - hotfix/*
+        ${{ if eq(and(eq(parameters.Run_PRD, true), or(startsWith(variables['Build.SourceBranch'], 'refs/heads/release/'), startsWith(variables['Build.SourceBranch'], 'refs/heads/hotfix/'))), true) }}:
+          DeployUAT:
+            DTAP: PRD
+            AdoEnvironment: BEMAC-SHOPIFY-FE-PRD
+            VariableGroupName: KV-BEMAC-SHOPIFY-FE-PRD
+            ShopifyStoreURI: prod-order.myshopify.com
