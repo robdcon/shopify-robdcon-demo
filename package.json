@@ -1,5 +1,5 @@
 {
-  "name": "macmillan-shopify-bemac-order",
+  "name": "robdcon-demo",
   "version": "1.0.0",
   "description": "Shopify CLI theme development",
   "private": true,
@@ -7,9 +7,11 @@
   "scripts": {
     "webpack:dev": "set NODE_ENV=development && webpack --watch",
     "build": "webpack",
-    "shopify:dev": "shopify theme dev",
-    "shopify:start": "cd src && npm run shopify:dev",
-    "start:watch": "concurrently \"npm run webpack:dev\" \"npm run shopify:start\""
+    "shopify:dev": "shopify theme dev --store robdcon-demo",
+    "shopify:start": "cd dist && npm run shopify:dev",
+    "start:watch": "concurrently \"npm run webpack:dev\" \"npm run shopify:start\"",
+    "logout:start": "npm run logout && npm run start:watch",
+    "logout": "cd dist && shopify auth logout"
   },
   "keywords": [],
   "author": "Rob Connolly",

@@ -8,10 +8,7 @@ const devtool = mode === 'development' ? 'eval-cheap-source-map' : false;
 module.exports = {
   mode: 'development',
   entry: {
-    macmillan: './dev/scripts/pages/index.js',
-    register: './dev/scripts/pages/register.js',
-    login: './dev/scripts/pages/login.js',
-    styles: './dev/styles/index.scss',
+    index: './src/scripts/pages/index.js'
   },
   output: {
     filename: '[name].js',

@@ -8,6 +8,43 @@
     "theme_support_url": "https:\/\/shopify.dev\/docs\/apps\/tools\/development-stores\/generated-data#themes\/"
   },
   {
+    "name": "Product pages",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Navigation"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_product_navigation",
+        "label": "Show product navigation",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "product_navigation_previous_text",
+        "label": "Previous button label",
+        "default": "Previous"
+      },
+      {
+        "type": "text",
+        "id": "product_navigation_next_text",
+        "label": "Next button label",
+        "default": "Next"
+      },
+      {
+        "type": "range",
+        "id": "product_navigation_padding_bottom",
+        "default": 50,
+        "label": "Bottom padding",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.logo.name",
     "settings": [
       {
