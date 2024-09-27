@@ -1,0 +1,4 @@
+.featured-products {
+    @include section-padding;
+    padding-bottom: $mac-spacing-min4 !important;
+}

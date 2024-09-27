@@ -1,0 +1,66 @@
+/*
+	Borders
+	https://www.figma.com/file/EtXYGGBTPeFPwuLdRS7U5a/Design-System---Mac?node-id=3211%3A8873&mode=dev
+*/
+
+// Primitive
+
+$mac-border-m: var(--mac-border-m, 2px);
+$mac-border-s: var(--mac-border-s, 1px);
+
+// Semantic
+
+$mac-border-secondary: $mac-border-m;
+$mac-border-primary: $mac-border-s;
+
+// Mixins
+
+/*
+	Apply Border
+
+	Usage: Use for applying borders.
+
+	Options:
+		- Type:
+			Primary
+			Secondary
+
+		- Color:
+				$mac-color-border-lightest
+				$mac-color-border-light
+				$mac-color-border-dark
+				$mac-color-border-darkest
+				$mac-color-border-error
+				$mac-color-border-focus
+				$mac-color-border-hero
+*/
+
+@mixin apply-border($type: $mac-border-primary, $color: $mac-color-border-darkest) {
+	border: $type $color solid;
+}
+
+
+/*
+	Bottom Border
+
+	Usage: When using the border bottom property to add an underline to text,
+	in which we can then specify padding.
+
+	Options:
+		- Size:
+			1px
+			2px
+
+		- Color
+			$mac-color-border-lightest
+			$mac-color-border-light
+			$mac-color-border-dark
+			$mac-color-border-darkest
+			$mac-color-border-error
+			$mac-color-border-focus
+			$mac-color-border-hero
+*/
+
+@mixin apply-bottom-border($size: 1px, $color: $mac-color-border-darkest) {
+	border-bottom: $size solid $color;
+}

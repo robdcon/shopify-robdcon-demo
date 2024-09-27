@@ -1,0 +1,203 @@
+:root {
+    /* COLOURS */
+    --mac-prim-color-brand5: #E5FAEB;
+    --mac-prim-color-brand20: #AAEFC0;
+    --mac-prim-color-brand70: #008A26;
+    --mac-prim-color-brand90: #006E1E;
+    --mac-prim-color-brand40: #01D664;
+    --mac-prim-color-black: #000000;
+    --mac-prim-color-white: #FFFFFF;
+    --mac-prim-color-gray10: #F1F4F2;
+    --mac-prim-color-gray30: #DDDDDD;
+    --mac-prim-color-gray40: #B5B5B5;
+    --mac-prim-color-gray50: #909090;
+    --mac-prim-color-gray60: #767676;
+    --mac-prim-color-gray80: #454545;
+    --mac-prim-color-red70: #DD0F0F;
+    --mac-prim-color-blue70: #1500FF;
+    /* FONT FAMILY */
+    --mac-prim-fontfamily-regular: "Macmillan Cera Pro Regular", Arial, sans-serif;
+    --mac-prim-fontfamily-bold: "Macmillan Cera Pro Bold", Arial, sans-serif;
+    --mac-prim-fontfamily-black: "Macmillan Cera Pro Black", Arial, sans-serif;
+    --mac-prim-fontfamily-body: "Helvetica", "Arial", sans-serif;
+    --mac-prim-fontfamily-icons: "Macmillan Icons";
+    /* FONT SIZE */
+    --mac-prim-fontsize-xl2: 3rem;
+    --mac-prim-fontsize-xl1: 2.25rem;
+    --mac-prim-fontsize-l3: 2rem;
+    --mac-prim-fontsize-l2: 1.75rem;
+    --mac-prim-fontsize-l1: 1.5rem;
+    --mac-prim-fontsize-m: 1.25rem;
+    --mac-prim-fontsize-s: 1rem;
+    --mac-prim-fontsize-xs: 0.875rem;
+    /* LINE HEIGHT */
+    --mac-prim-lineheight-l3: 3rem;
+    --mac-prim-lineheight-l2: 2.25rem;
+    --mac-prim-lineheight-l1: 2rem;
+    --mac-prim-lineheight-m3: 1.75rem;
+    --mac-prim-lineheight-m2: 1.5rem;
+    --mac-prim-lineheight-m1: 1.25rem;
+    --mac-prim-lineheight-s: 1rem;
+    /* FONT WEIGHT */
+    --mac-prim-fontweight-regular: 400;
+    --mac-prim-fontweight-bold: 700;
+    --mac-prim-fontweight-black: 900;
+    /* BORDER */
+    --mac-border-m: 2px;
+    --mac-border-s: 1px;
+    /* RADIUS */
+    --mac-prim-radius-l: 12px;
+    --mac-prim-radius-m: 8px;
+    --mac-prim-radius-s: 4px;
+    /* SHADOWS */
+    --mac-shadow-l1: 0px 0px 12px 0px;
+    --mac-shadow-l2: 0px 4px 12px 0px;
+    /* SPACING */
+    --mac-prim-spacing-l4: 7rem;
+    --mac-prim-spacing-l3: 6.5rem;
+    --mac-prim-spacing-l2: 6rem;
+    --mac-prim-spacing-l1: 5.5rem;
+    --mac-prim-spacing-m4: 5rem;
+    --mac-prim-spacing-m3: 4.5rem;
+    --mac-prim-spacing-m2: 4rem;
+    --mac-prim-spacing-m1: 3.5rem;
+    --mac-prim-spacing-s4: 3rem;
+    --mac-prim-spacing-s3: 2.5rem;
+    --mac-prim-spacing-s2: 2rem;
+    --mac-prim-spacing-s1: 1.5rem;
+    --mac-prim-spacing-xs4: 1rem;
+    --mac-prim-spacing-xs3: 0.75rem;
+    --mac-prim-spacing-xs2: 0.5rem;
+    --mac-prim-spacing-xs1: 0.25rem;
+    /* Semantic Foreground Colors */
+    --mac-color-fg-hero: var(--mac-prim-color-brand70);
+    --mac-color-fg-hero-2: var(--mac-prim-color-brand90);
+    --mac-color-fg-accent: var(--mac-prim-color-brand40);
+    --mac-color-fg-invert: var(--mac-prim-color-white);
+    --mac-color-fg-primary: var(--mac-prim-color-black);
+    --mac-color-fg-secondary: var(--mac-prim-color-gray60);
+    --mac-color-fg-tertiary: var(--mac-prim-color-gray80);
+    --mac-color-fg-error: var(--mac-prim-color-red70);
+    /* Semantic Background Colors */
+    --mac-color-bg-1: var(--mac-prim-color-white);
+    --mac-color-bg-2: var(--mac-prim-color-gray10);
+    --mac-color-bg-3: var(--mac-prim-color-gray30);
+    --mac-color-bg-4: var(--mac-prim-color-brand5);
+    --mac-color-bg-5: var(--mac-prim-color-brand20);
+    --mac-color-bg-invert-1: var(--mac-prim-color-brand70);
+    --mac-color-bg-invert-2: var(--mac-prim-color-brand90);
+    --mac-color-bg-invert-3: var(--mac-prim-color-black);
+    --mac-color-bg-invert-4: var(--mac-prim-color-gray80);
+    --mac-color-bg-invert-5: var(--mac-prim-color-gray60);
+    --mac-color-bg-accent: var(--mac-prim-color-brand40);
+    /* Semantic Border Colors */
+    --mac-color-border-lightest: var(--mac-prim-color-white);
+    --mac-color-border-light: var(--mac-prim-color-gray30);
+    --mac-color-border-dark: var(--mac-prim-color-gray60);
+    --mac-color-border-darkest: var(--mac-prim-color-black);
+    --mac-color-border-error: var(--mac-prim-color-red70);
+    --mac-color-border-focus: var(--mac-prim-color-blue70);
+    --mac-color-border-hero: var(--mac-prim-color-brand20);
+    /* Semantic spacing tokens */
+    --mac-spacing-max4: var(--mac-prim-spacing-l4);
+    --mac-spacing-max3: var(--mac-prim-spacing-l3);
+    --mac-spacing-max2: var(--mac-prim-spacing-l2);
+    --mac-spacing-max1: var(--mac-prim-spacing-l1);
+    --mac-spacing-med4: var(--mac-prim-spacing-m4);
+    --mac-spacing-med3: var(--mac-prim-spacing-m3);
+    --mac-spacing-med2: var(--mac-prim-spacing-m2);
+    --mac-spacing-med1: var(--mac-prim-spacing-m1);
+    --mac-spacing-min4: var(--mac-prim-spacing-s4);
+    --mac-spacing-min3: var(--mac-prim-spacing-s3);
+    --mac-spacing-min2: var(--mac-prim-spacing-s2);
+    --mac-spacing-min1: var(--mac-prim-spacing-s1);
+    --mac-spacing-nano4: var(--mac-prim-spacing-xs4);
+    --mac-spacing-nano3: var(--mac-prim-spacing-xs3);
+    --mac-spacing-nano2: var(--mac-prim-spacing-xs2);
+    --mac-spacing-nano1: var(--mac-prim-spacing-xs1);
+    --panel-border: var(--mac-color-border-light);
+    --panel-border-hover: var(--mac-color-border-dark);
+    /* Semantic Elevation Colors */
+    --mac-color-elevation-primary: var(--mac-prim-color-gray30);
+    --mac-color-elevation-secondary: var(--mac-prim-color-gray60);
+    /* Icons */
+    --icon-primary: var(--mac-prim-color-brand70);
+    --icon-secondary: var(--mac-prim-color-gray40);
+    --mac-radius-max: 12px;
+    --mac-radius-med: 8px;
+    --mac-radius-min: 4px;
+    --mac-shadow-low: var(--mac-shadow-l1) var(--mac-color-elevation-primary);
+    --mac-shadow-high: var(--mac-shadow-l2) var(--mac-color-elevation-primary);
+    /* FONT FAMILY */
+    --mac-fontfamily-regular: var(--mac-prim-fontfamily-regular);
+    --mac-fontfamily-bold: var(--mac-prim-fontfamily-bold);
+    --mac-fontfamily-black: var(--mac-prim-fontfamily-black);
+    --mac-fontfamily-body: var(--mac-prim-fontfamily-body);
+    /* FONT SIZE */
+    /* Headings */
+    --mac-fontsize-hs1: var(--mac-prim-fontsize-xl2);
+    --mac-fontsize-hs2: var(--mac-prim-fontsize-xl1);
+    --mac-fontsize-hs3: var(--mac-prim-fontsize-l3);
+    --mac-fontsize-hs4: var(--mac-prim-fontsize-l2);
+    --mac-fontsize-hs5: var(--mac-prim-fontsize-l1);
+    --mac-fontsize-hs6: var(--mac-prim-fontsize-m);
+    --mac-fontsize-hs7: var(--mac-prim-fontsize-s);
+    /* Paragraphs */
+    --mac-fontsize-ld1: var(--mac-prim-fontsize-l1);
+    --mac-fontsize-ld2: var(--mac-prim-fontsize-m);
+    --mac-fontsize-bs1: var(--mac-prim-fontsize-s);
+    --mac-fontsize-bs2: var(--mac-prim-fontsize-xs);
+    --mac-fontsize-bs3: var(--mac-prim-fontsize-xs);
+    /* Actions */
+    --mac-fontsize-btn: var(--mac-prim-fontsize-s);
+    /* Links */
+    --mac-fontsize-link-l: var(--mac-prim-fontsize-m);
+    --mac-fontsize-link-m: var(--mac-prim-fontsize-s);
+    --mac-fontsize-link-s: var(--mac-prim-fontsize-s);
+    --mac-fontsize-link-xs: var(--mac-prim-fontsize-xs);
+    --mac-fontsize-bslink: var(--mac-fontsize-link-s);
+    /* Forms */
+    --mac-fontsize-form-m: var(--mac-prim-fontsize-m);
+    --mac-fontsize-form-s: var(--mac-prim-fontsize-s);
+    /* LINE HEIGHT */
+    /* Headings */
+    --mac-lineheight-hs1: var(--mac-prim-lineheight-l3);
+    --mac-lineheight-hs2: var(--mac-prim-lineheight-l2);
+    --mac-lineheight-hs3: var(--mac-prim-lineheight-l1);
+    --mac-lineheight-hs4: var(--mac-prim-lineheight-l1);
+    --mac-lineheight-hs5: var(--mac-prim-lineheight-m3);
+    --mac-lineheight-hs6: var(--mac-prim-lineheight-m2);
+    --mac-lineheight-hs7: var(--mac-prim-lineheight-m1);
+    /* Paragraphs */
+    --mac-lineheight-ld1: var(--mac-prim-lineheight-l1);
+    --mac-lineheight-ld2: var(--mac-prim-lineheight-m3);
+    --mac-lineheight-bs1: var(--mac-prim-lineheight-m2);
+    --mac-lineheight-bs2: var(--mac-prim-lineheight-m1);
+    --mac-lineheight-bs3: var(--mac-prim-lineheight-m1);
+    /* Actions */
+    --mac-lineheight-btn: var(--mac-prim-lineheight-s);
+    /* Links */
+    --mac-lineheight-link-l: var(--mac-prim-lineheight-m2);
+    --mac-lineheight-link-m: var(--mac-prim-lineheight-s);
+    --mac-lineheight-link-s: var(--mac-prim-lineheight-m1);
+    --mac-lineheight-link-xs: var(--mac-prim-lineheight-s);
+    /* Forms */
+    --mac-lineheight-form-m: var(--mac-prim-lineheight-m2);
+    --mac-lineheight-form-s: var(--mac-prim-lineheight-m1);
+    /* FONT WEIGHT */
+    /* Headings */
+    --mac-fontweight-hs-strong: var(--mac-fontfamily-bold);
+    --mac-fontweight-hs-heavy: var(--mac-fontfamily-black);
+    /* Paragraphs */
+    --mac-fontweight-ld: var(--mac-prim-fontweight-regular);
+    --mac-fontweight-bs: var(--mac-prim-fontweight-regular);
+    /* Actions */
+    --mac-fontweight-btn: var(--mac-prim-fontweight-bold);
+    /* Links */
+    --mac-fontweight-link-regular: var(--mac-prim-fontweight-regular);
+    --mac-fontweight-link-strong: var(--mac-prim-fontweight-bold);
+    /* Forms */
+    --mac-fontweight-form-regular: var(--mac-prim-fontweight-regular);
+    --mac-fontweight-form-strong: var(--mac-prim-fontweight-bold);
+  }
+  

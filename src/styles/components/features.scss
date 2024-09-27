@@ -1,0 +1,19 @@
+.features-section {
+    @include section-padding;
+    
+    h2 {
+        margin-bottom: $mac-spacing-min1;
+        @media(min-width: 600px) {
+            margin-bottom: $mac-spacing-min4;  
+        }
+    }
+    
+    .section-link-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    a.btn:hover {
+        color: $mac-color-fg-invert;
+    }
+}

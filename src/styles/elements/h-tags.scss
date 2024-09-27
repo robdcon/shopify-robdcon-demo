@@ -1,0 +1,19 @@
+@import '../tools/index.scss';
+
+.h1, h1 {
+	@include hstyle3;
+	@include media-breakpoint-up(md) {
+		@include hstyle1;
+	}
+}
+
+.h2, h2 {
+	@include hstyle4;
+	@include media-breakpoint-up(md) {
+		@include hstyle2;
+	}
+}
+
+h3, .h3 {
+	@include hstyle5;
+}

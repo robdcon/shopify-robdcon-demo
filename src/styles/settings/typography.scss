@@ -1,0 +1,130 @@
+/**
+	# Primitives
+	These variables should not be referred to directly by a component.
+	They are used to build up the semantic variables.
+	Design System Primitive Tokens can be found here:
+	https://www.figma.com/file/EtXYGGBTPeFPwuLdRS7U5a/Design-System---Mac?node-id=1%3A26&mode=dev
+*/
+
+/**
+	FONT FAMILY
+*/
+$mac-prim-fontfamily-regular: var(--mac-prim-fontfamily-regular, 'Macmillan Cera Pro Regular', Arial, sans-serif);
+$mac-prim-fontfamily-bold: var(--mac-prim-fontfamily-bold, 'Macmillan Cera Pro Bold', Arial, sans-serif);
+$mac-prim-fontfamily-black: var(--mac-prim-fontfamily-black, 'Macmillan Cera Pro Black', Arial, sans-serif);
+$mac-prim-fontfamily-body: var(--mac-prim-fontfamily-body, 'Helvetica', 'Arial', sans-serif);
+$mac-prim-fontfamily-icons: var(--mac-prim-fontfamily-icons, 'Macmillan Icons');
+
+/**
+  FONT SIZE
+*/
+$mac-prim-fontsize-xl2: var(--mac-prim-fontsize-xl2, 3rem);
+$mac-prim-fontsize-xl1: var(--mac-prim-fontsize-xl1, 2.25rem);
+$mac-prim-fontsize-l3: var(--mac-prim-fontsize-l3, 2rem);
+$mac-prim-fontsize-l2: var(--mac-prim-fontsize-l2, 1.75rem);
+$mac-prim-fontsize-l1: var(--mac-prim-fontsize-l1, 1.5rem);
+$mac-prim-fontsize-m: var(--mac-prim-fontsize-m, 1.25rem);
+$mac-prim-fontsize-s: var(--mac-prim-fontsize-s, 1rem);
+$mac-prim-fontsize-xs: var(--mac-prim-fontsize-xs, 0.875rem);
+
+/**
+  LINE HEIGHT
+*/
+$mac-prim-lineheight-l3: var(--mac-prim-lineheight-l3, 3rem);
+$mac-prim-lineheight-l2: var(--mac-prim-lineheight-l2, 2.25rem);
+$mac-prim-lineheight-l1: var(--mac-prim-lineheight-l1, 2rem);
+$mac-prim-lineheight-m3: var(--mac-prim-lineheight-m3, 1.75rem);
+$mac-prim-lineheight-m2: var(--mac-prim-lineheight-m2, 1.5rem);
+$mac-prim-lineheight-m1: var(--mac-prim-lineheight-m1, 1.25rem);
+$mac-prim-lineheight-s: var(--mac-prim-lineheight-s, 1rem);
+
+/**
+  FONT WEIGHT
+*/
+$mac-prim-fontweight-regular: var(--mac-prim-fontweight-regular, 400);
+$mac-prim-fontweight-bold: var(--mac-prim-fontweight-bold, 700);
+$mac-prim-fontweight-black: var(--mac-prim-fontweight-black, 900);
+/**
+	# Semantic
+	These variables should referred to Primitive variables.
+	They are referenced by elements depending on the usage.
+	Design System Semantic Tokens can be found here:
+	https://www.figma.com/file/EtXYGGBTPeFPwuLdRS7U5a/Design-System---Mac?node-id=1%3A26&mode=dev
+*/
+
+/**
+	FONT FAMILY
+*/
+$mac-fontfamily-regular: var(--mac-fontfamily-regular);
+$mac-fontfamily-bold: var(--mac-fontfamily-bold);
+$mac-fontfamily-black: var(--mac-fontfamily-black);
+$mac-fontfamily-body: var(--mac-fontfamily-body);
+$mac-fontfamily-icons: var(--mac-fontfamily-icons);
+
+/**
+	FONT SIZE
+*/
+
+// Headings
+$mac-fontsize-hs1: var(--mac-fontsize-hs1);
+$mac-fontsize-hs2: var(--mac-fontsize-hs2);
+$mac-fontsize-hs3: var(--mac-fontsize-hs3);
+$mac-fontsize-hs4: var(--mac-fontsize-hs4);
+$mac-fontsize-hs5: var(--mac-fontsize-hs5);
+$mac-fontsize-hs6: var(--mac-fontsize-hs6);
+$mac-fontsize-hs7: var(--mac-fontsize-hs7);
+
+$mac-fontsize-ld1: var(--mac-fontsize-ld1);
+$mac-fontsize-ld2: var(--mac-fontsize-ld2);
+$mac-fontsize-bs1: var(--mac-fontsize-bs1);
+$mac-fontsize-bs2: var(--mac-fontsize-bs2);
+$mac-fontsize-bs3: var(--mac-fontsize-bs3);
+
+$mac-fontsize-btn: var(--mac-fontsize-btn);
+
+$mac-fontsize-link-l: var(--mac-fontsize-link-l);
+$mac-fontsize-link-m: var(--mac-fontsize-link-m);
+$mac-fontsize-link-s: var(--mac-fontsize-link-s);
+$mac-fontsize-link-xs: var(--mac-fontsize-link-xs);
+$mac-fontsize-bslink: var(--mac-fontsize-bslink);
+
+$mac-fontsize-form-m: var(--mac-fontsize-form-m);
+$mac-fontsize-form-s: var(--mac-fontsize-form-s);
+
+$mac-lineheight-hs1: var(--mac-lineheight-hs1);
+$mac-lineheight-hs2: var(--mac-lineheight-hs2);
+$mac-lineheight-hs3: var(--mac-lineheight-hs3);
+$mac-lineheight-hs4: var(--mac-lineheight-hs4);
+$mac-lineheight-hs5: var(--mac-lineheight-hs5);
+$mac-lineheight-hs6: var(--mac-lineheight-hs6);
+$mac-lineheight-hs7: var(--mac-lineheight-hs7);
+
+$mac-lineheight-ld1: var(--mac-lineheight-ld1);
+$mac-lineheight-ld2: var(--mac-lineheight-ld2);
+$mac-lineheight-bs1: var(--mac-lineheight-bs1);
+$mac-lineheight-bs2: var(--mac-lineheight-bs2);
+$mac-lineheight-bs3: var(--mac-lineheight-bs3);
+
+$mac-lineheight-btn: var(--mac-lineheight-btn);
+
+$mac-lineheight-link-l: var(--mac-lineheight-link-l);
+$mac-lineheight-link-m: var(--mac-lineheight-link-m);
+$mac-lineheight-link-s: var(--mac-lineheight-link-s);
+$mac-lineheight-link-xs: var(--mac-lineheight-link-xs);
+
+$mac-lineheight-form-m: var(--mac-lineheight-form-m);
+$mac-lineheight-form-s: var(--mac-lineheight-form-s);
+
+$mac-fontweight-hs-strong: var(--mac-fontweight-hs-strong);
+$mac-fontweight-hs-heavy: var(--mac-fontweight-hs-heavy);
+
+$mac-fontweight-ld: var(--mac-fontweight-ld);
+$mac-fontweight-bs: var(--mac-fontweight-bs);
+
+$mac-fontweight-btn: var(--mac-fontweight-btn);
+
+$mac-fontweight-link-regular: var(--mac-fontweight-link-regular);
+$mac-fontweight-link-strong: var(--mac-fontweight-link-strong);
+
+$mac-fontweight-form-regular: var(--mac-fontweight-form-regular);
+$mac-fontweight-form-strong: var(--mac-fontweight-form-strong);

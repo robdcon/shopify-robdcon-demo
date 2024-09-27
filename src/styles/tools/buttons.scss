@@ -1,0 +1,48 @@
+
+
+@mixin button-default-style {
+	text-decoration: none;
+	border-radius: $mac-radius-min !important;
+	display: inline-flex !important;
+	padding: $mac-spacing-nano4 $mac-spacing-min4;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	text-decoration: none;
+	transition: background-color 0.3s;
+}
+
+@mixin button-primary-style {
+	background-color: $mac-color-bg-accent !important;
+	border: none;
+
+	&:disabled {
+		background-color: $mac-color-bg-2 !important;
+		color: $spanish-grey;
+	}
+
+	&:active, &:focus {
+		background-color: $mac-color-bg-accent;
+	}
+
+}
+
+@mixin button-secondary-style {
+	background-color: $mac-color-bg-1 !important;
+	border: $mac-border-secondary solid $mac-color-border-darkest !important;
+
+	&:active, &:focus {
+		color: $mac-color-fg-primary;
+		background-color: $mac-color-bg-1;
+	}
+}
+
+// @mixin disable-button-type-styles($color: $btn-link-disabled-color) {
+// 	pointer-events: none;
+// 	cursor: not-allowed;
+// 	opacity: $btn-disabled-opacity;
+// 	color: $color !important;
+// 	border-color: $color !important;
+// 	outline: 0;
+// }

@@ -1,0 +1,42 @@
+.text-section {
+    @include section-padding;
+    
+    .text__text {
+        margin-bottom: 0;
+
+        p {
+            margin-bottom: 0;
+            @include bstyle1;
+            font-size: inherit;
+            line-height: $mac-lineheight-ld2;
+
+
+            @media(max-width: 600px) {
+                padding-left: .625rem;
+                padding-right: .625rem;
+            }
+
+            a {
+                @include paragraph-link-style;
+                font-size: inherit !important;
+            }
+        }
+    }
+
+    .text__btn {
+        margin-top: 24px;
+
+        .link {
+            @include navlink-l($color: 'hero');
+        }
+    }
+
+    .link {
+        &:hover {
+            color: $mac-color-fg-primary;
+            text-decoration: underline !important;
+            background-color: $mac-color-bg-5;
+        }
+    }
+
+}

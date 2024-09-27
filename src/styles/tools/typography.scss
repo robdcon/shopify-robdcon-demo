@@ -1,0 +1,267 @@
+@import '../settings/index.scss';
+
+/**
+	# fontColor
+	For use in hstyle mixins where the color can be variable depending on the context.
+	Default is hero.
+	For alternate use, provide 'primary' as the $color argument.
+*/
+
+@mixin fontColor($color) {
+	@if $color == 'hero' {
+		color: $mac-color-fg-hero;
+	} @else if $color == 'primary' {
+		color: $mac-color-fg-primary;
+	} @else {
+		@error 'Invalid color, please use "hero" or "primary"';
+	}
+}
+
+/**
+	# fontWeight
+	For use in hstyle mixins where the weight can be variable depending on the context.
+	The weight is controlled by a specific font for each. The output of this mixin is the correct font family depending on the desired weight.
+	Default is heavy.
+	For alternate use, provide 'strong' as the $weight argument.
+*/
+
+@mixin fontWeight($weight) {
+	@if $weight == 'heavy' {
+		font-family: $mac-fontfamily-black;
+		font-weight: $mac-prim-fontweight-black;
+	} @else if $weight == 'strong' {
+		font-family: $mac-fontfamily-bold;
+		font-weight: $mac-prim-fontweight-bold;
+	} @else if $weight == 'regular' {
+		font-family: $mac-fontfamily-regular;
+		font-weight: $mac-prim-fontweight-regular;
+	} @else {
+		@error "Invalid weight, please use 'heavy' or 'strong'";
+	}
+}
+
+/**
+	# linkColor
+	For use in link mixins where the color can be variable depending on the context.
+	Default is invert. Possible values are primary, hero, hero-2 or invert
+*/
+
+@mixin linkColor($color) {
+	@if $color == 'invert' {
+		color: $mac-color-fg-invert;
+	} @else if $color == 'primary' {
+		color: $mac-color-fg-primary;
+	} @else if $color == 'hero' {
+		color: $mac-color-fg-hero;
+	} @else if $color == 'hero-2' {
+		color: $mac-color-fg-hero-2;
+	} @else {
+		@error "Invalid color, please use 'invert', 'primary', 'hero' or 'hero-2'";
+	}
+}
+
+/**
+* Set default font styles
+*/
+
+@mixin default-font-style() {
+	font-family: $mac-fontfamily-body;
+	font-size: $mac-prim-fontsize-s;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.5;
+	letter-spacing: normal;
+}
+
+/**
+	# Heading Mixins
+	These are used to set the font styles for headings.
+	They group together Semantic Token variables from the settings/typography folder.
+	Where a parameter is defined, refer to above mixins for usage.
+	For heading 1-3, the font-weight is always heavy so the font-family is defined explicitly.
+	For heading 1-2, the colour is always 'hero' so the colour is defined explicitly.
+*/
+
+@mixin hstyle1 {
+	font-family: $mac-fontfamily-black !important;
+	font-size: $mac-fontsize-hs1 !important;
+	line-height: $mac-lineheight-hs1;
+	color: $mac-color-fg-hero;
+}
+
+@mixin hstyle2 {
+	font-family: $mac-fontfamily-black !important;
+	font-size: $mac-fontsize-hs2 !important;
+	line-height: $mac-lineheight-hs2;
+	color: $mac-color-fg-hero;
+}
+
+@mixin hstyle3($color: 'hero') {
+	font-family: $mac-fontfamily-black !important;
+	font-size: $mac-fontsize-hs3 !important;
+	line-height: $mac-lineheight-hs3;
+	@include fontColor($color);
+}
+
+@mixin hstyle4($color: 'hero', $weight: 'heavy') {
+	@include fontWeight($weight);
+	font-size: $mac-fontsize-hs4 !important;
+	line-height: $mac-lineheight-hs4;
+	@include fontColor($color);
+}
+
+@mixin hstyle5($color: 'hero', $weight: 'heavy') {
+	@include fontWeight($weight);
+	font-size: $mac-fontsize-hs5 !important;
+	line-height: $mac-lineheight-hs5;
+	@include fontColor($color);
+}
+
+@mixin hstyle6($color: 'hero', $weight: 'heavy') {
+	@include fontWeight($weight);
+	font-size: $mac-fontsize-hs6 !important;
+	line-height: $mac-lineheight-hs6;
+	@include fontColor($color);
+}
+
+@mixin hstyle7($color: 'hero', $weight: 'heavy') {
+	@include fontWeight($weight);
+	font-size: $mac-fontsize-hs7 !important;
+	line-height: $mac-lineheight-hs7;
+	@include fontColor($color);
+}
+
+/**
+	Lead Style Text Mixins
+*/
+
+@mixin ldstyle {
+	font-family: $mac-fontfamily-body !important;
+	font-size: $mac-fontsize-ld2 !important;
+	line-height: $mac-lineheight-ld2;
+	color: $mac-color-fg-primary;
+}
+
+/**
+	Body Style Text Mixins
+*/
+
+@mixin bstyle1 {
+	font-family: $mac-fontfamily-body;
+	font-size: $mac-fontsize-bs1;
+	line-height: $mac-lineheight-bs1;
+	color: $mac-color-fg-primary;
+}
+
+@mixin bstyle2 {
+	font-family: $mac-fontfamily-body;
+	font-size: $mac-fontsize-bs2;
+	line-height: $mac-lineheight-bs2;
+	color: $mac-color-fg-primary;
+}
+
+@mixin bstyle3($color: 'primary') {
+	font-family: $mac-fontfamily-body;
+	font-size: $mac-fontsize-bs3;
+	line-height: $mac-lineheight-bs3;
+	@if ($color == 'primary') {
+		color: $mac-color-fg-primary;
+	} @else if ($color == 'secondary') {
+		color: $mac-color-fg-secondary;
+	} @else {
+		@error "Invalid argument, please use 'primary' for input text or 'secondary' for placeholder text";
+	}
+}
+
+/**
+	Link Style Text Mixins
+*/
+
+@mixin navlink-l($color) {
+	@include fontWeight('strong');
+	font-size: $mac-fontsize-link-l;
+	line-height: $mac-lineheight-link-l;
+	@include linkColor($color);
+}
+
+@mixin navlink-m($weight: 'regular', $color: 'invert') {
+	@include fontWeight($weight);
+	font-size: $mac-fontsize-link-m;
+	line-height: $mac-lineheight-link-m;
+	@include linkColor($color);
+}
+
+@mixin navlink-s($weight, $color) {
+	@include fontWeight($weight);
+	font-size: $mac-fontsize-link-s;
+	line-height: $mac-lineheight-link-s;
+	@include linkColor($color);
+}
+
+@mixin navlink-xs($color: 'primary') {
+	font-family: $mac-fontfamily-regular;
+	font-size: $mac-fontsize-link-xs;
+	line-height: $mac-lineheight-link-xs;
+	@include linkColor($color);
+}
+
+@mixin bodylink($color: 'hero-2') {
+	font-size: $mac-fontsize-bslink;
+	@include linkColor($color);
+	line-height: $mac-lineheight-link-s;
+	font-family: $mac-fontfamily-body;
+}
+
+/**
+	Form Styles
+*/
+
+@mixin forminput($color: 'primary') {
+	font-family: $mac-fontfamily-regular;
+	font-size: $mac-fontsize-form-s;
+	line-height: $mac-lineheight-form-s;
+	font-weight: $mac-fontweight-form-regular;
+	@if ($color == 'primary') {
+		color: $mac-color-fg-primary;
+	} @else if ($color == 'secondary') {
+		color: $mac-color-fg-secondary;
+	} @else {
+		@error "Invalid argument, please use 'primary' for input text or 'secondary' for placeholder text";
+	}
+}
+
+@mixin form-placeholder {
+	color: $mac-color-fg-secondary;
+	font-size: $mac-fontsize-form-s;
+	line-height: $mac-lineheight-form-s;
+	font-family: $mac-fontfamily-body;
+	font-weight: normal;
+}
+
+@mixin formlabel() {
+	font-family: $mac-fontfamily-bold;
+	font-size: $mac-fontsize-form-m;
+	line-height: $mac-lineheight-form-m;
+	font-weight: $mac-fontweight-form-strong;
+	@include fontColor('primary');
+}
+
+@mixin formerror() {
+	font-family: $mac-fontfamily-regular;
+	font-size: $mac-fontsize-form-s;
+	line-height: $mac-lineheight-form-s;
+	color: $mac-color-fg-error;
+}
+
+/**
+	Buttons
+*/
+
+@mixin button-type-style($color: 'invert') {
+	font-family: $mac-fontfamily-bold;
+	font-weight: $mac-fontweight-btn;
+	font-size: $mac-fontsize-btn;
+	line-height: $mac-lineheight-btn;
+	@include linkColor($color);
+}

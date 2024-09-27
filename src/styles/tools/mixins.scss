@@ -1,0 +1,10 @@
+@import '../settings/index.scss';
+/**
+* Set default focus style
+*/
+
+@mixin focus-style-keyboard {
+	outline: 3px solid $mac-color-border-lightest !important;
+	box-shadow: 0 0 0 5px $mac-color-border-focus !important;
+	outline-offset: 0;
+}

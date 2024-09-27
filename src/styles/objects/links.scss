@@ -1,0 +1,13 @@
+.information-box {
+    a {
+        text-decoration: underline;
+        padding: 0.25em;
+        margin: -0.25em;
+    
+        &:hover {
+            text-decoration: none;
+            background-color: var(--mac-prim-color-brand20);  
+        }
+    }
+}
+

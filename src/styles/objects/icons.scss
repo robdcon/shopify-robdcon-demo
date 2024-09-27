@@ -1,0 +1,111 @@
+.svg-icon-wrapper {
+    background-color: $mac-color-bg-5;
+    width: 140px;
+    height:140px;
+    border-radius: 100px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mm-icon {
+    display: inline-block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 24px;
+    width: 24px;
+}
+
+:is(.mm-icon):has(a) {
+    border: 1px solid res;
+}
+
+.mm-user {
+    background-image: url(../assets/svg/icon-user.svg);
+}
+
+.mm-cart {
+    background-image: url(../assets/svg/icon-cart.svg);
+}
+
+.mm-facebook {
+    background-image: url(../assets/svg/icon-facebook.svg);
+}
+
+.mm-facebook-green {
+    background-image: url(../assets/svg/icon-facebook-green.svg);
+}
+
+.mm-invisible {
+    background-image: url(../assets/svg/icon-invisible.svg);
+}
+
+.mm-officeworker-m {
+    background-image: url(../assets/svg/icon-officeworker-m.svg);
+}
+
+.mm-officeworker {
+    background-image: url(../assets/svg/icon-officeworker.svg);
+}
+
+.mm-sharecoin {
+    background-image: url(../assets/svg/icon-sharecoin.svg);
+}
+
+.mm-visible {
+    background-image: url(../assets/svg/icon-visible.svg);
+}
+
+.mm-x {
+    background-image: url(../assets/svg/icon-x.svg);
+}
+
+.mm-x-green {
+    background-image: url(../assets/svg/icon-x-green.svg);
+}
+
+.mm-youtube {
+    background-image: url(../assets/svg/icon-youtube.svg);
+}
+
+.mm-IDcard {
+    background-image: url(../assets/svg/icon-IDcard.svg);
+}
+
+.mm-email {
+    background-image: url(../assets/svg/icon-email.svg);
+}
+
+.mm-email-green {
+    background-image: url(../assets/svg/icon-email-green.svg);
+}
+
+.mm-icon-chevron {
+    background-image: url(../assets/svg/chevron.svg);
+}
+
+.mm-icon-chevron-white {
+    background-image: url(../assets/svg/icon-chevron-white.svg);
+}
+.mm-icon-circle-information {
+    background-image: url(../assets/svg/icon-circle-information.svg)
+}
+.mm-icon-circle-alert {
+    background-image: url(../assets/svg/icon-circle-alert.svg)
+}
+
+.mm-icon-hamburgermenu {
+    background-image: url(../assets/svg/icon-hamburgermenu.svg);
+}
+
+.mm-icon-home {
+    background-image: url(../assets/svg/icon-home.svg);
+}
+
+.mm-icon-cross {
+    background-image: url(../assets/svg/icon-cross.svg);
+}
+
+.mm-icon-dropdown-arrow {
+    background-image: url(../assets/svg/icon-dropdown-arrow.svg);
+}
