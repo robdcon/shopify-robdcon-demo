@@ -1,0 +1,11 @@
+@import './colors.scss';
+/*
+	Shadows
+	https://www.figma.com/file/EtXYGGBTPeFPwuLdRS7U5a/Design-System---Mac?node-id=3211%3A9255&mode=dev
+*/
+
+$mac-shadow-l1: var(--mac-shadow-l1, 0px 0px 12px 0px);
+$mac-shadow-l2: var(--mac-shadow-l2, 0px 4px 12px 0px);
+
+$mac-shadow-low: $mac-shadow-l1 $mac-color-elevation-primary;
+$mac-shadow-high: $mac-shadow-l2 $mac-color-elevation-primary;

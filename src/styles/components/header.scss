@@ -1,0 +1,58 @@
+@import '../settings/index.scss';
+
+#main-header {
+    .logo__link {
+        color: $mac-color-fg-invert;
+        &:hover {
+            background-color: transparent !important;
+            opacity: 1 !important;
+        }
+    }
+    
+    .menu-item-link i {
+        font-size: 29px;
+    }
+
+    #header-right-menu {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 24px;
+
+        @media(min-width: 600px) {
+            margin-top: 16px;
+        }
+
+        .header__user {
+            margin-right: 1.625rem;
+        }
+
+        .header__cart {
+            margin-right: 0;
+            
+            @media(min-width: 600px) {
+                margin-right: 1.625rem;
+            }
+        }
+    }
+
+    .btn-donate-small {
+        font-family: $mac-fontfamily-bold;
+        font-weight: normal;
+        color: $mac-color-fg-primary;
+        background-color: $mac-color-bg-1;
+        border: 2px solid $mac-color-bg-1;
+        padding: 6px $mac-spacing-nano2 !important;
+        margin-left: 12px;
+    
+        &:not(:disabled):hover {
+            color: $mac-color-fg-invert;
+            background-color: $mac-color-bg-invert-3;
+            border-color: $mac-color-bg-invert-3;
+        }
+    
+        @include media-breakpoint-up(sm) {
+            padding: 12px $mac-spacing-nano4 !important;
+        }
+    }
+}

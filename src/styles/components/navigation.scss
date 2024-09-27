@@ -1,0 +1,6 @@
+.secondary-header #primary-menu {
+    a.menu-item-link {
+        @include navlink-m($weight: regular, $color: primary);
+        text-decoration: none !important;
+    }
+} 

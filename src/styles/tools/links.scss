@@ -1,0 +1,51 @@
+
+@import '../settings/index.scss';
+
+// Setting the paragraph link $novisited argument as true will not add visited styling for the link
+
+@mixin paragraph-link-style($has-visited: true) {
+	@include bodylink();
+	margin: 0 -2px;
+	padding: 0 2px;
+	display: inline-block;
+	&:not(.btn) {
+		text-decoration: underline !important;
+	}
+
+	&:hover,
+	&:hover span {
+		background-color: $mac-color-bg-5;
+		color: $mac-color-fg-primary;
+	}
+
+	&:active {
+		transform: translateY(1px);
+	}
+
+	@if ($has-visited == true) {
+		&:visited {
+			color: $mac-color-fg-primary;
+
+			&:hover {
+				color: $mac-color-fg-primary;
+			}
+		}
+	} @else {
+		&:visited {
+			color: $mac-color-fg-hero;
+
+			&:hover {
+				color: $mac-color-fg-primary;
+			}
+		}
+	}
+
+	@media print {
+		color: $mac-color-fg-primary;
+	}
+
+	i {
+		margin-right: 6px;
+		font-size: 12px;
+	}
+}

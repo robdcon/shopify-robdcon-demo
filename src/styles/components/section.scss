@@ -1,0 +1,9 @@
+@import '../tools/typography.scss';
+
+.section-title:is(h2) {
+    font-family: $mac-fontfamily-bold;
+    @include hstyle4;
+    @include media-breakpoint-up(md) {
+        @include hstyle2;
+    }
+}

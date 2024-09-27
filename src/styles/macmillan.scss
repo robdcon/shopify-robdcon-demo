@@ -1,0 +1,451 @@
+/*============================================================================
+Variables
+==============================================================================*/
+$page-title-size: 3em;
+$page-title-size-mobile: 2em;
+$color-body-title: #008a26;
+$color-body-text: #000000;
+$fontsPath: '../assets/fonts';
+
+/*============================================================================
+Fonts
+==============================================================================*/
+@font-face {
+    font-family: 'Macmillan Cera Pro Regular';
+    src: url("#{$fontsPath}/CeraProMacmillan-Regular.woff2") format('woff2'),
+         url("#{$fontsPath}/CeraProMacmillan-Regular.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Macmillan Cera Pro Black';
+    src: url("#{$fontsPath}/CeraProMacmillan-Black.woff2") format('woff2'),
+         url("#{$fontsPath}/CeraProMacmillan-Black.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Macmillan Cera Pro Bold';
+    src: url("#{$fontsPath}/CeraProMacmillan-Bold.woff2") format('woff2'),
+         url("#{$fontsPath}/CeraProMacmillan-Bold.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/*============================================================================
+Accessibility
+==============================================================================*/
+body {
+    &.using-keyboard {
+        .ui-selectmenu.ui-state-focus,
+        input:focus,
+        input.checkbox:focus ~ label:before,
+        input.radio:focus ~ label:before,
+        textarea:focus,
+        button:focus,
+        select:focus,
+        .btn:focus,
+        a:focus {
+            @include focus-style-keyboard;
+        }
+        input.checkbox:focus,
+        input.radio:focus {
+            outline: 0;
+        }
+    }
+}
+
+/*============================================================================
+Form - Global
+==============================================================================*/
+/* Style for screen reader only element */
+.sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important; /* 2 */
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important; /* 3 */
+}
+/* Style for checkbox and radio */
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: $color-body-title;
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+    vertical-align: top;
+}
+/* Style for form error messages */
+p.error {
+    color: #DD0F0F !important;
+    text-align: left;
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.2;
+    margin-top: 0.4em;
+
+    &:before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        background-image: url(../assets/svg/icon-error.svg);
+        background-size: cover;
+        position: absolute;
+        top: 2px;
+        left: 0;
+    }
+}
+.custom-select {
+    position: relative;
+
+    &::after {
+        content: '';
+        background-image: url(../assets/svg/icon-dropdown-arrow.svg);
+        background-size: 100%;
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        top: 15px;
+        right: 16px;
+        pointer-events: none;
+    }
+
+    select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    
+        &::-ms-expand {
+            display: none;
+        }
+    }
+}
+.form-check {
+    margin-bottom: 16px;
+}
+textarea {
+    min-height: 6em;
+}
+[type="checkbox"] + label,
+[type="radio"] + label {
+    margin-left: 0;
+}
+.page-title {
+    font-size: $page-title-size;
+    font-family: 'Macmillan Cera Pro Black', Arial,sans-serif;
+    font-weight: 900;
+    text-transform: none;
+    margin-bottom: 32px;
+
+    @media screen and (max-width: 46.8125em) { 
+        font-size: $page-title-size-mobile;
+    }
+}
+th {
+    font-size: 18px;
+    color: $color-body-title;
+}
+
+
+/*============================================================================
+Form - With Validation
+==============================================================================*/
+/* CSS for forms with validation */
+.form-with-validation {
+    /* Style for error input fields */
+    input.error,
+    select.error,
+    textarea.error {
+        border: 1px solid #dd0f0f;
+    }
+
+    /* Style for valid input fields */
+    input.valid,
+    select.valid,
+    textarea.valid {
+        border: 1px solid $color-body-title;
+    }
+
+    /* Style for form validation error summary */
+    .error-summary {
+        color: #dd0f0f;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+}
+/* End of CSS for forms with validation */
+
+/*============================================================================
+Form - Budget Code (Cart Page)
+==============================================================================*/
+/* CSS for cart budget form */
+/* Set the maximum width of the form container to 460 pixels */
+.cart-budget-form {
+    max-width: 600px;
+
+    /* Style the textarea within the form */
+    textarea,
+    input[type="text"] {
+        background-color: white;
+    }
+
+    /* Add margin at the bottom of each form group */
+    .form-group {
+        margin-bottom: 24px;
+    }
+    .form-check {
+        &:first-child {
+            margin-top: 1em;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    /* Remove the default margin-bottom for select, input, and textarea elements */
+    select,
+    input,
+    textarea {
+        margin-bottom: 0;
+    }
+
+    /* Styles for fielset, legend and inner labels */
+    fieldset label:not([for="fundraising-goal-amount"]) {
+        font-weight: normal;
+        display: inline;
+    }
+
+     /* Styles for fundraising goal amount input */
+    .amount-input-container {
+        position: relative;
+    }
+
+    .amount-input-container:before {
+        content: "£";
+        position: absolute;
+        left: 1em;
+        top: 10px;
+    }
+    .amount-input {
+        max-width: 200px;
+        padding-left: 2.2em;
+    }
+    .form-help-text {
+        margin-bottom: 0;
+    }
+    .form-reason {
+        position: relative;
+    }
+    .form-char-counter {
+        color: black;
+        font-size: 12px;
+        text-align: right;
+        position: absolute;
+        right: 0;
+        top: 128px;
+    }
+    #reason-error {
+        max-width: 84%;
+    }
+}
+
+/* Styles for term and conditions */
+.cart-tnc {
+    margin-bottom: 2em;
+
+    input {
+        margin-bottom: 0;
+        margin-right: 0.5em;
+        float: left;
+    }
+    label {
+        font-weight: 400;
+        width: calc(100% - 48px);
+        margin-right: 0;
+    }
+    a {
+        text-decoration: underline;
+        padding: 0.25em;
+        margin: -0.25em;
+
+        &:hover {
+            background-color: #aaefc0;
+            color: #000;
+        }
+    }
+}
+
+/* End of CSS for cart budget form */
+
+/*============================================================================
+Table - Split Basket (Cart Page)
+==============================================================================*/
+.no-padding {
+    padding: 0px !important;
+}
+.cart-split-msg td:first-child {
+    border-left: 1px solid #b4b4b4;
+}
+.information-box {
+    padding: 12px 12px 12px 60px;
+    border-radius: 8px;
+    position: relative;
+
+    .information-box__icon {
+        position: absolute;
+        left: 8px;
+        top: 12px;
+    }
+    h5 {
+        font-family: 'Macmillan Cera Pro Bold', Arial,sans-serif;
+        font-size: 1em;
+        font-weight: 700;
+        line-height: 1.25em;
+        margin-bottom: 0px;
+    }
+    p {
+        font-size: 0.88em;
+        font-weight: 400;
+        line-height: 20px;
+        margin-bottom: 0px;
+    }
+}
+.information-box--large {
+    margin: 3em 0;
+    padding-left: 48px;
+
+    h5 {
+        @include hstyle7($color: 'hero', $weight: 'strong');
+        margin-bottom: 12px;
+    }
+}
+
+.cart-items__title, 
+.cart-item-price,
+.cart-item-total {
+    font-family: 'Macmillan Cera Pro Regular', Arial,sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+    color: $color-body-text;
+}
+.cart-item-total {
+    color: #767676;
+    font-weight: normal;
+}
+.cart-item__sku, 
+.cart-items__variant,
+.cart-item__remove {
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+.cart-item__remove {
+    text-decoration: underline;
+    color: #227B3B;
+    padding: 0.25em;
+    margin: -0.25em;
+
+    &:hover {
+        text-decoration: none;
+        background-color: #aaefc0;
+    }
+    &:visited {
+        color: #000000;
+    }
+}
+.cart-total {
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    grid-gap: 20px;
+    padding: 12px;
+
+    .cart-total__text,
+    .cart-total__amount {
+        flex: 1;
+    }
+    .cart-total__text h5{
+        font-size: 1.115em;
+        font-weight: 700;
+        line-height: 1.5;
+        margin-bottom: 0;
+    }
+    .cart-total__text p{
+        font-size: 0.88em;
+        font-weight: 400;
+        line-height: 1.255;
+    }
+    .cart-total__amount {
+        text-align: center;
+        font-size: 1.25em;
+        line-height: 1.5em;
+        font-weight: 700;
+
+        del {
+            display:block;
+        }
+    }
+}
+
+.cart-page .js-qty__adjust + p.error {
+    display: none !important
+}
+/*============================================================================
+Table Responsivenss - Split Basket (Cart Page)
+==============================================================================*/
+@media screen and (max-width: 46.8125em) { 
+    .cart-items__row {
+        position: relative;
+    }
+    
+
+    .cart-items__row:not(:last-child) {
+        border-bottom: 1px solid #b4b4b4;
+    }
+    .cart-split-msg {
+        border-bottom: 1px solid #b4b4b4 !important;
+    }
+    .cart-items__img {
+        padding-top: 2em;
+    }
+    .cart-items__price--small-only,
+    .cart-items__total--small-only,
+    .cart-items__delete {
+        position: absolute;
+        right: 0;
+        top: 3em;
+        border: none;
+    }
+    td.cart-items__total--small-only {
+        top: auto;
+        bottom: 3em;
+        border-left: none !important;
+    }
+    .cart-items__delete {
+       right: auto;
+       top: auto;
+       left: 1em;
+       bottom: 1.5em;
+    }
+    .cart-items__quantity {
+       .js-qty {
+            margin-bottom: 4em !important;
+       }
+    }
+    .information-box {
+        padding-left: 40px;
+    }
+}

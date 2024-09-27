@@ -1,0 +1,22 @@
+@import '../tools/index.scss';
+
+.using-keyboard {
+    [type='text'],
+    [type='password'],
+    [type='email'],
+    [type='number'],
+    [type='tel'],
+    [type='date'] {
+            &:focus {
+                    @include box-shadow-style($force-style: true);
+                    @include focus-style-keyboard;
+            }
+    }
+    [type='checkbox'],
+    [type='radio'] {
+            &:focus~.form-check-label:before {
+                    @include box-shadow-style($force-style: true);
+                    @include focus-style-keyboard;
+            }
+    }
+}

@@ -1,0 +1,27 @@
+#maincontent {
+    #breadcrumb {
+        display: flex;
+        align-items: center;
+        max-height: 24px;
+
+        .mm-icon {
+            height: 16px;
+            width: 16px;
+            background-size: 100%;
+        }
+
+        a {
+            font-size: .8125rem;
+            &:first-of-type {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 24px;
+                width: 24px;
+            }
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+}

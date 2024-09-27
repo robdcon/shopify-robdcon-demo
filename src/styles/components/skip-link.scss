@@ -1,0 +1,21 @@
+@import '../tools/typography.scss';
+
+.skip-link {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    @include hstyle4();
+
+    &:focus {
+        left: 0;
+        top: 0;
+        z-index: 9999999;
+        width: auto;
+        height: auto;
+        padding: 1em 1.5em;
+        background-color: $mac-color-bg-1;
+    }
+}

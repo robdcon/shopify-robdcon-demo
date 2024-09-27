@@ -1,0 +1,42 @@
+@import '../settings/index.scss';
+
+@mixin box-shadow-style($force-style: false ) {
+	@if $force-style == true {
+		box-shadow: $mac-shadow-l1 $mac-color-elevation-primary !important;
+	}	@else {
+		box-shadow: $mac-shadow-l1 $mac-color-elevation-primary;
+	}
+}
+
+// previously known as box-shadow-dropdown-style
+// TODO: Check logic here
+@mixin box-shadow-elevated-style($force-style: false, $color: primary) {
+	@if $force-style == true {
+		@if ($color == primary) {
+			box-shadow: $mac-shadow-l2 $mac-color-elevation-primary !important;
+		} @else {
+			box-shadow: $mac-shadow-l2 $mac-color-elevation-secondary !important;
+		}
+	} @else {
+			@if ($color == primary) {
+				box-shadow: $mac-shadow-l2 $mac-color-elevation-primary;
+			} @else {
+				box-shadow: $mac-shadow-l2 $mac-color-elevation-secondary;
+			}
+	}
+}
+
+/**
+* Set box shadow style
+*/
+
+@mixin box-shadow-dropdown-style($force-style: false) {
+	@if $force-style ==true {
+		box-shadow: 0 5px 10px 0 rgba(186, 186, 186, .25) !important;
+	}
+
+	@else {
+		box-shadow: 0 5px 10px 0 rgba(186, 186, 186, .25);
+	}
+}
+

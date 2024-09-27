@@ -1,0 +1,22 @@
+.jumbotron-section {
+    padding: $mac-spacing-min2 $mac-spacing-nano2 $mac-spacing-min2 $mac-spacing-nano2;
+    @media(min-width: 841px) {
+        padding: 66px 78px 66px 78px;
+    }
+    
+    &__title {
+        text-align: center;
+        margin-bottom: $mac-spacing-min3;
+    }
+}
+
+.jumbotron {
+    max-width: 920px;
+    padding: $mac-spacing-min3;
+    background-color: $mac-color-bg-2;
+    border-radius: $mac-radius-max;
+
+    &__text {
+        @include bstyle1;
+    }
+}

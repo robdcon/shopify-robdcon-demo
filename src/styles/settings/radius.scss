@@ -1,0 +1,9 @@
+// Primitive radius tokens
+$mac-prim-radius-l: var(--mac-prim-radius-l, 12px);
+$mac-prim-radius-m: var(--mac-prim-radius-m, 8px);
+$mac-prim-radius-s: var(--mac-prim-radius-s, 4px);
+
+// Semantic radius tokens
+$mac-radius-max: $mac-prim-radius-l;
+$mac-radius-med: $mac-prim-radius-m;
+$mac-radius-min: $mac-prim-radius-s;

@@ -1,0 +1,23 @@
+.account-page {
+
+    h2.customer-details-title {
+        font-size: .875rem !important;
+    }
+    
+    h2.customer-orders-title {
+        font-size: 1.5rem !important;
+    }
+}
+
+
+.customer-account-type {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+    .mm-icon {
+        margin-right: .75rem;
+    }
+
+}
+

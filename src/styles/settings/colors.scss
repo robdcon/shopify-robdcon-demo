@@ -1,0 +1,45 @@
+// Semantic Foreground Colors
+$mac-color-fg-hero: var(--mac-color-fg-hero);
+$mac-color-fg-hero-2: var(--mac-color-fg-hero-2);
+$mac-color-fg-accent: var(--mac-color-fg-accent);
+$mac-color-fg-invert: var(--mac-color-fg-invert);
+$mac-color-fg-primary: var(--mac-color-fg-primary);
+$mac-color-fg-secondary: var(--mac-color-fg-secondary);
+$mac-color-fg-tertiary: var(--mac-color-fg-tertiary);
+$mac-color-fg-error: var(--mac-color-fg-error);
+
+// Semantic Background Colors
+$mac-color-bg-1: var(--mac-color-bg-1);
+$mac-color-bg-2: var(--mac-color-bg-2);
+$mac-color-bg-3: var(--mac-color-bg-3);
+$mac-color-bg-4: var(--mac-color-bg-4);
+$mac-color-bg-5: var(--mac-color-bg-5);
+$mac-color-bg-invert-1: var(--mac-color-bg-invert-1);
+$mac-color-bg-invert-2: var(--mac-color-bg-invert-2);
+$mac-color-bg-invert-3: var(--mac-color-bg-invert-3);
+$mac-color-bg-invert-4: var(--mac-color-bg-invert-4);
+$mac-color-bg-invert-5: var(--mac-color-bg-invert-5);
+$mac-color-bg-accent: var(--mac-color-bg-accent);
+
+// Semantic Border Colors
+$mac-color-border-lightest: var(--mac-color-border-lightest);
+$mac-color-border-light: var(--mac-color-border-light);
+$mac-color-border-dark: var(--mac-color-border-dark);
+$mac-color-border-darkest: var(--mac-color-border-darkest);
+$mac-color-border-error: var(--mac-color-border-error);
+$mac-color-border-focus: var(--mac-color-border-focus);
+$mac-color-border-hero: var(--mac-color-border-hero);
+
+$panel-border: var(--panel-border);
+$panel-border-hover: var(--panel-border-hover);
+
+// Semantic Elevation Colors
+$mac-color-elevation-primary: var(--mac-color-elevation-primary);
+$mac-color-elevation-secondary: var(--mac-color-elevation-secondary);
+
+// Icons
+$icon-primary: var(--icon-primary);
+$icon-secondary: var(--icon-secondary);
+
+// Links
+$visited-link-color: $mac-color-fg-primary;

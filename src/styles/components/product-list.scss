@@ -1,0 +1,38 @@
+.products-list {
+    #product-count-wrapper {
+        margin-bottom: 1rem;
+    }
+
+    .product-loop-price .money {
+        color: $mac-color-fg-primary;
+        font-weight: 700;
+    }
+
+    .product-list-item {
+        position: relative;
+        .product-badge {
+            &.tablet {
+                display: none;
+            }
+        }
+
+        @media(min-width: 750px) and (max-width: 1024px )  {
+            .product-badge {
+                &.default {
+                    display: none;
+                }
+                &.tablet {
+                    position: relative;
+                    display: block;
+                    width: max-content;
+                    margin-bottom: .75rem;
+                }
+            }
+        }
+    }
+
+    .customer-notification {
+        margin: $mac-spacing-min2 auto;
+        max-width: 600px;
+    }
+}

@@ -1,0 +1,269 @@
+/* Register Form */
+/* OBJECTS */
+
+/* FORMS ELEMENTS */
+#signup-page, #login-page, #account {
+
+    @media(max-width: 750px) {
+        form {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+    }
+
+    .h1 {
+        margin-bottom: 48px;
+    }
+
+    .form-wrapper {
+        max-width: 624px;
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    .field {
+        margin-bottom: 1.25em;
+    }
+    
+    legend {
+        font-family: var(--mac-fontfamily-bold);
+        font-size: var(--mac-fontsize-form-m);
+        line-height: var(--mac-lineheight-form-m);
+        font-weight: var(--mac-fontweight-form-strong);
+    }
+    
+    .form-check {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        margin-bottom: 0;
+    
+        label {
+            font-family: var(--mac-prim-fontfamily-body);
+            font-size: var(--mac-fontsize-form-m);
+            line-height: var(--mac-lineheight-form-m);
+            color: var(--mac-color-fg-primary);
+        }
+    }
+    
+    input:is([type='text'], [type='password'], [type='email'], [type='number'], [type='tel'], [type='date']) {
+        height: 48px;
+        padding: 14px var(--mac-spacing-nano4);
+        border-radius: var(--mac-radius-med);
+        border: var(--mac-border-s) solid var(--mac-color-border-dark);
+        border-color: var(--mac-color-border-dark);
+        background-color: var(--mac-color-bg-1);
+        margin-bottom: 0;
+
+        &.error {
+            border-color: $mac-color-border-error;
+        }
+    }
+    
+    :is(label, legend):not(.form-check label) {
+        font-family: var(--mac-fontfamily-bold);
+        font-size: var(--mac-fontsize-form-m);
+        line-height: var(--mac-lineheight-form-m);
+        font-weight: var(--mac-fontweight-form-strong);
+        color: var(--mac-color-fg-primary);
+    }
+    
+    ::placeholder {
+        color: var(--mac-color-fg-secondary);
+        font-size: var(--mac-fontsize-form-s);
+        line-height: var(--mac-lineheight-form-s);
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        font-weight: normal;
+    }
+
+    p.error {
+        padding-left: 1.25rem;
+        margin-top: 0.4em;
+    }
+
+    p.error:before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        background-image: url(../assets/svg/icon-error.svg);
+        background-size: cover;
+        position: absolute;
+        top: 9px;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    
+    .radio-group__legend {
+        margin-bottom: var(--mac-spacing-min1);
+    }
+    
+    .form-check-wrapper {
+        margin-bottom: var(--mac-prim-spacing-s1);
+    }
+    
+    
+    .form-check input[type="radio"] {
+        margin-right: var(--mac-spacing-nano1);
+        margin-bottom: 0;
+    }
+    
+    .form-check-wrapper .role__description {
+        margin-left: calc(var(--mac-prim-spacing-s1) + var(--mac-prim-spacing-xs1));
+        text-align: left;
+    }
+    
+    #customer-roles label {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .role-label-text {
+        display: block;
+    }
+    
+    #CustomerEmail {
+        .error-message-wrapper {
+            display: none;
+        }
+        
+        &.error {
+            .error-message-wrapper {
+                display: block;
+            }
+        }
+    }
+    
+    .js-email-help-text {
+        display: none;
+    }
+    
+    p.help {
+        text-align: left;
+        position: relative;
+        padding-left: 1.25rem;
+        line-height: 1.2;
+        margin-top: .4em;
+        font-family: 'Helvetica';
+        font-weight: 400;
+        color: #000;
+    }
+    
+    p.help::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        background-image: url(../assets/svg/icon-circle-information.svg);
+        background-size: cover;
+        position: absolute;
+        top: 2px;
+        left: 0;
+    }
+    
+    h3#customer_role {
+        text-align: left;
+    }
+    
+    .form-body-text--primary {
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        color: #000000;
+        font-size: 1rem;
+        line-height: 1.25rem;
+    }
+    
+    .form-body-text--secondary {
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        color: #767676;
+        font-size: 1rem;
+        line-height: 1.25rem;
+    }
+    
+    .form-label-m {
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        color: #000000;
+        font-size: 1.25rem;
+        line-height: 1.25rem;
+    }
+    
+    .account-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: var(--mac-prim-spacing-s1);
+    }
+    
+    .account-links * {
+        width: fit-content;
+    }
+
+    .__signin {
+        color: var(--mac-color-fg-primary);
+        font-size: var(--mac-fontsize-form-s);
+        margin-top: 1.25em;
+    
+        a {
+            text-decoration: underline;
+            &:hover {
+                background-color: $mac-color-bg-5;
+            }
+        }
+    }
+    .password-wrapper {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    
+    .toggle-password {
+        display: block;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .recover-password-wrapper {
+        text-align: center;
+    }
+    
+    form {
+        #customer_register_link, #RecoverPassword, #HideRecoverPasswordLink, #customer_login_link {
+            @include paragraph-link-style($has-visited: false);
+            text-decoration: underline;
+        }
+    } 
+    
+
+    #HideRecoverPasswordLink {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+}
+
+/* Budget Form */
+.cart-budget-form {
+     p.help {
+        text-align: left;
+        position: relative;
+        padding-left: 1.25rem;
+        line-height: 1.2;
+        margin-top: 0.4rem;
+        font-family: 'Helvetica';
+        font-weight: 400;
+        color: var(--mac-color-fg-secondary);
+    }
+    
+    p.help::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        background-image: url(../assets/svg/icon-circle-information.svg);
+        background-size: cover;
+        position: absolute;
+        top: 2px;
+        left: 0;
+    }
+}

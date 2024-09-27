@@ -1,0 +1,192 @@
+.toggle-all-sections {
+    button {
+        display: flex;
+        align-items: center;
+        height: 24px;
+        margin-bottom: $mac-spacing-nano4;
+        @include hstyle7($color: 'hero', $weight: 'strong');
+        cursor: pointer;
+
+        &:hover {
+            color: $mac-color-fg-primary;
+            background-color: $mac-color-bg-5;
+        }
+
+        .mm-icon {
+            margin-right: $mac-spacing-nano2;
+        }
+
+        &[aria-expanded="false"] {
+            .mm-icon {
+                background-image: url(../assets/svg/icon-circle-add.svg);
+            }
+        }
+
+        &:hover {
+            &[aria-expanded="false"] {
+                .mm-icon {
+                    background-image: url(../assets/svg/icon-circle-add-hover.svg);
+                }
+            }
+        }
+
+        &[aria-expanded="true"] {
+            .mm-icon {
+                background-image: url(../assets/svg/icon-circle-subtract.svg);
+            }
+        }
+
+        &:hover {
+            &[aria-expanded="true"] {
+                .mm-icon {
+                    background-image: url(../assets/svg/icon-circle-subtract-hover.svg);
+                }
+            }
+        }
+    }
+}
+
+.accordions {
+    padding: $mac-spacing-min2 $mac-spacing-nano2 $mac-spacing-min4 $mac-spacing-nano2;
+    margin: 0 auto;
+
+    h2 {
+        color: $mac-color-fg-primary;
+        margin-bottom: 1.25rem;
+    }
+
+    max-width: 840px;
+}
+
+.accordion {
+    padding: 0;
+    margin: 0;
+    border: 1px solid $mac-color-border-dark;
+    border-radius: $mac-radius-max;
+    max-width: 820px;
+
+
+    h3 {
+        margin: 0;
+        padding: 0;
+    }
+
+    &>*+* {
+        border-top: 1px solid $mac-color-border-dark;
+    }
+
+    .accordion-trigger {
+        display: block;
+        margin: 0;
+        position: relative;
+        text-align: left;
+        width: 100%;
+        outline: none;
+        border-radius: 0;
+        padding: $mac-spacing-nano4 56px $mac-spacing-nano4 $mac-spacing-nano4;
+    }
+
+    .accordion-item-wrapper:first-of-type {
+        .accordion-trigger:hover {
+            border-top-left-radius: $mac-radius-max;
+            border-top-right-radius: $mac-radius-max;
+        }
+    }
+
+    .accordion-item-wrapper:last-of-type {
+
+        .accordion-trigger {
+            border-bottom: none;
+
+            &[aria-expanded="false"]:hover {
+                border-bottom-left-radius: $mac-radius-max;
+                border-bottom-right-radius: $mac-radius-max;
+            }
+        }
+
+    }
+
+    button {
+        border-style: none;
+        @include formlabel;
+    }
+
+    .accordion-title {
+        all: initial;
+        display: block;
+        pointer-events: none;
+        border: none !important;
+        border-radius: $mac-radius-max;
+        @include hstyle7($color: 'primary', $weight: 'strong');
+    }
+
+    .accordion-title:before {
+        content: "" !important;
+    }
+
+    .accordion-icon {
+        border-radius: 100px;
+        width: 24px;
+        height: 24px;
+        pointer-events: none;
+        position: absolute;
+        right: $mac-spacing-nano4;
+        top: $mac-spacing-nano4;
+
+        .mm-icon {
+            background: url(../assets/svg/icon-circle-down.svg);
+            background-size: cover;
+        }
+    }
+
+    .accordion-trigger[aria-expanded="true"] .accordion-icon {
+        .mm-icon {
+            background: url(../assets/svg/icon-circle-arrow-up.svg);
+            background-size: cover;
+        }
+    }
+
+    .accordion-trigger:hover {
+        background: $mac-color-bg-4;
+
+        .accordion-icon {
+            .mm-icon {
+                background: url(../assets/svg/icon-circle-down-hover.svg);
+                background-size: cover;
+            }
+        }
+
+        &[aria-expanded="true"] .accordion-icon {
+            .mm-icon {
+                background: url(../assets/svg/icon-circle-arrow-up-hover.svg);
+                background-size: cover;
+            }
+        }
+    }
+
+    .accordion-panel {
+        margin: 0;
+        padding: $mac-spacing-nano4;
+    }
+
+    /* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4806035/ */
+    .accordion-panel[hidden] {
+        display: none;
+    }
+}
+
+
+.using-keyboard {
+    .accordion:focus {
+        @include box-shadow-style($force-style: true);
+        @include focus-style-keyboard;
+    }
+}
+
+.accordion-trigger:focus {
+    outline: 4px solid transparent;
+}
+
+.accordion button::-moz-focus-inner {
+    border: 0;
+}

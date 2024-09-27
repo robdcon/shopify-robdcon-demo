@@ -1,0 +1,41 @@
+@import '../settings/index.scss';
+@import '../tools/mixins.scss';
+
+/* Buttons */
+.btn {
+    font-family: var(--mac-fontfamily-bold);
+	font-weight: var(--mac-fontweight-btn);
+	font-size: var(--mac-fontsize-btn);
+	line-height: var(--mac-lineheight-btn);
+	color: var(--mac-color-fg-primary);
+    text-decoration: none !important;
+	text-align: center;
+	border-radius: var(--mac-radius-min) !important;
+	display: inline-flex !important;
+	padding: var(--mac-spacing-nano4) var(--mac-spacing-min4);
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.3s;
+
+	&:hover, &:focus {
+		background-color: var(--mac-color-bg-invert-3);
+		color: var(--mac-color-fg-invert);
+		border: $mac-border-secondary solid var(--mac-color-bg-invert-3);
+	}
+}
+
+.btn-primary {
+    background-color: var(--mac-color-bg-accent);
+	border: $mac-border-secondary solid var(--mac-color-bg-accent);
+
+	&:disabled {
+		background-color: var(--mac-color-bg-2);
+		color: var(--mac-prim-color-gray50);
+	}
+}
+
+.btn-secondary {
+	border: $mac-border-secondary solid $mac-color-border-darkest !important;
+	background-color: $mac-color-bg-1;
+}

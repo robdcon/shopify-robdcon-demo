@@ -1,0 +1,41 @@
+// Primitive spacing tokens
+$mac-prim-spacing-l4: var(--mac-prim-spacing-l4);
+$mac-prim-spacing-l3: var(--mac-prim-spacing-l3);
+$mac-prim-spacing-l2: var(--mac-prim-spacing-l2);
+$mac-prim-spacing-l1: var(--mac-prim-spacing-l1);
+
+$mac-prim-spacing-m4: var(--mac-prim-spacing-m4);
+$mac-prim-spacing-m3: var(--mac-prim-spacing-m3);
+$mac-prim-spacing-m2: var(--mac-prim-spacing-m2);
+$mac-prim-spacing-m1: var(--mac-prim-spacing-m1);
+
+$mac-prim-spacing-s4: var(--mac-prim-spacing-s4);
+$mac-prim-spacing-s3: var(--mac-prim-spacing-s3);
+$mac-prim-spacing-s2: var(--mac-prim-spacing-s2);
+$mac-prim-spacing-s1: var(--mac-prim-spacing-s1);
+
+$mac-prim-spacing-xs4: var(--mac-prim-spacing-xs4);
+$mac-prim-spacing-xs3: var(--mac-prim-spacing-xs3);
+$mac-prim-spacing-xs2: var(--mac-prim-spacing-xs2);
+$mac-prim-spacing-xs1: var(--mac-prim-spacing-xs1);
+
+// Semantic spacing tokens
+$mac-spacing-max4: $mac-prim-spacing-l4;
+$mac-spacing-max3: $mac-prim-spacing-l3;
+$mac-spacing-max2: $mac-prim-spacing-l2;
+$mac-spacing-max1: $mac-prim-spacing-l1;
+
+$mac-spacing-med4: $mac-prim-spacing-m4;
+$mac-spacing-med3: $mac-prim-spacing-m3;
+$mac-spacing-med2: $mac-prim-spacing-m2;
+$mac-spacing-med1: $mac-prim-spacing-m1;
+
+$mac-spacing-min4: $mac-prim-spacing-s4;
+$mac-spacing-min3: $mac-prim-spacing-s3;
+$mac-spacing-min2: $mac-prim-spacing-s2;
+$mac-spacing-min1: $mac-prim-spacing-s1;
+
+$mac-spacing-nano4: $mac-prim-spacing-xs4;
+$mac-spacing-nano3: $mac-prim-spacing-xs3;
+$mac-spacing-nano2: $mac-prim-spacing-xs2;
+$mac-spacing-nano1: $mac-prim-spacing-xs1;

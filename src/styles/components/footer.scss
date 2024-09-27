@@ -1,0 +1,20 @@
+@import '../tools/index.scss';
+
+#site-footer {
+    .footer-header {
+        @include navlink-l($color: invert);
+    }
+    .footer-callout {
+        a {
+            color: $mac-color-fg-invert;
+            &:hover {
+                color: $mac-color-fg-primary;
+            }
+        }
+    }
+
+    h3.widget__title {
+        @include hstyle7($weight: 'strong');
+        color: $mac-color-fg-invert;
+    }
+}
